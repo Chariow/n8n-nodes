@@ -4,6 +4,7 @@ import {
 	chariowApiRequestAllItems,
 	extractData,
 	buildListQuery,
+	ENDPOINTS,
 } from '../../shared';
 
 export const description: INodeProperties[] = [
@@ -92,9 +93,9 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<IData
 	const query = buildListQuery(limit, returnAll, filters);
 
 	if (returnAll) {
-		return chariowApiRequestAllItems.call(this, 'GET', '/sales', {}, query);
+		return chariowApiRequestAllItems.call(this, 'GET', ENDPOINTS.SALES, {}, query);
 	}
 
-	const response = await chariowApiRequest.call(this, 'GET', '/sales', {}, query);
+	const response = await chariowApiRequest.call(this, 'GET', ENDPOINTS.SALES, {}, query);
 	return extractData(response) as IDataObject[];
 }

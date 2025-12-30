@@ -8,7 +8,7 @@ import type {
 } from 'n8n-workflow';
 import { NodeConnectionTypes } from 'n8n-workflow';
 
-import { chariowApiRequest } from './shared';
+import { chariowApiRequest, ENDPOINTS } from './shared';
 
 export class ChariowTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -176,17 +176,15 @@ export class ChariowTrigger implements INodeType {
 					}
 				}
 
-				// Register webhook with Chariow - expect 201 Created response
-				const response = await chariowApiRequest.call(this, 'POST', '/connections/n8n', body);
-
+				// Register webhook with Chariow
+				const response = await chariowApiRequest.call(
+					this,
+					'POST',
+					ENDPOINTS.CONNECTIONS_N8N,
+					body,
+				);
 				const data = (response.data || response) as IDataObject;
-				if (data.id) {
-					webhookData.webhookId = data.id;
-					return true;
-				}
-
-				// If we got a response but no ID, still consider it successful
-				// as long as no error was thrown
+				webhookData.webhookId = data.id;
 				return true;
 			},
 
@@ -198,7 +196,7 @@ export class ChariowTrigger implements INodeType {
 						await chariowApiRequest.call(
 							this,
 							'DELETE',
-							`/connections/n8n/${webhookData.webhookId}`,
+							ENDPOINTS.CONNECTION_N8N(webhookData.webhookId as string),
 						);
 					} catch {
 						// Ignore errors - webhook might already be deleted

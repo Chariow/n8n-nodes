@@ -1,5 +1,5 @@
 import type { IExecuteFunctions, IDataObject, INodeProperties } from 'n8n-workflow';
-import { chariowApiRequest, extractData } from '../../shared';
+import { chariowApiRequest, extractData, ENDPOINTS } from '../../shared';
 
 export const description: INodeProperties[] = [
 	{
@@ -20,6 +20,6 @@ export const description: INodeProperties[] = [
 
 export async function execute(this: IExecuteFunctions, i: number): Promise<IDataObject> {
 	const customerId = this.getNodeParameter('customerId', i) as string;
-	const response = await chariowApiRequest.call(this, 'GET', `/customers/${customerId}`);
+	const response = await chariowApiRequest.call(this, 'GET', ENDPOINTS.CUSTOMER(customerId));
 	return extractData(response) as IDataObject;
 }

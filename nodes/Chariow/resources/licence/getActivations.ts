@@ -4,6 +4,7 @@ import {
 	chariowApiRequestAllItems,
 	extractData,
 	buildListQuery,
+	ENDPOINTS,
 } from '../../shared';
 
 export const description: INodeProperties[] = [
@@ -65,7 +66,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<IData
 		return chariowApiRequestAllItems.call(
 			this,
 			'GET',
-			`/licences/${licenceId}/activations`,
+			ENDPOINTS.LICENCE_ACTIVATIONS(licenceId),
 			{},
 			query,
 		);
@@ -74,7 +75,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<IData
 	const response = await chariowApiRequest.call(
 		this,
 		'GET',
-		`/licences/${licenceId}/activations`,
+		ENDPOINTS.LICENCE_ACTIVATIONS(licenceId),
 		{},
 		query,
 	);
