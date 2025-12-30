@@ -1,0 +1,67 @@
+{
+  "name": "n8n-nodes-chariow",
+  "version": "0.1.0",
+  "description": "n8n community nodes for Chariow - the digital products platform for creators and entrepreneurs",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "chariow",
+    "ecommerce",
+    "digital-products",
+    "automation",
+    "workflow"
+  ],
+  "license": "MIT",
+  "homepage": "https://chariow.com",
+  "author": {
+    "name": "Axa Zara",
+    "email": "support@chariow.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chariow/n8n-nodes.git"
+  },
+  "engines": {
+    "node": ">=18.10",
+    "pnpm": ">=9.1"
+  },
+  "packageManager": "pnpm@9.1.4",
+  "main": "index.js",
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "format": "prettier nodes credentials --write",
+    "format:check": "prettier nodes credentials --check",
+    "typecheck": "tsc --noEmit",
+    "test:local": "pnpm build && n8n-node dev",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/ChariowApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Chariow/Chariow.node.js",
+      "dist/nodes/Chariow/ChariowTrigger.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "*",
+    "eslint": "9.32.0",
+    "n8n-workflow": "*",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
