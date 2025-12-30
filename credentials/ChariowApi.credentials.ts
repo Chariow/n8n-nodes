@@ -5,6 +5,8 @@ import type {
 	INodeProperties,
 } from 'n8n-workflow';
 
+import { API_BASE_URL } from '../nodes/Chariow/shared/constants';
+
 export class ChariowApi implements ICredentialType {
 	name = 'chariowApi';
 
@@ -44,7 +46,7 @@ export class ChariowApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: 'https://api.chariow.com/v1',
+			baseURL: API_BASE_URL,
 			url: '/store',
 		},
 	};

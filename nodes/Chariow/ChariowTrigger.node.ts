@@ -78,11 +78,6 @@ export class ChariowTrigger implements INodeType {
 						description: 'Triggered when a sale fails',
 					},
 					{
-						name: 'Refunded',
-						value: 'refunded.sale',
-						description: 'Triggered when a sale is refunded',
-					},
-					{
 						name: 'Successful',
 						value: 'successful.sale',
 						description: 'Triggered when a sale is completed successfully',

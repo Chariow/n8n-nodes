@@ -9,7 +9,7 @@ import type {
 } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
 
-const API_BASE_URL = 'https://api.chariow.com/v1';
+import { API_BASE_URL } from './constants';
 
 /**
  * Make an authenticated API request to Chariow
