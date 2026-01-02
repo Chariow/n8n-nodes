@@ -5,7 +5,7 @@
 
 //export const API_BASE_URL = 'https://api.chariow.com/v1';
 
-export const API_BASE_URL = 'https://api.almabique-dev.com/v1';
+export const API_BASE_URL = 'https://api.alambique-dev.com/v1';
 
 /**
  * API Endpoints
