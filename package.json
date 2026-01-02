@@ -1,6 +1,6 @@
 {
-  "name": "n8n-nodes-chariow",
-  "version": "0.1.1",
+  "name": "@chariow/n8n-nodes-chariow",
+  "version": "0.0.0",
   "description": "n8n community nodes for Chariow - the digital products platform for creators and entrepreneurs",
   "keywords": [
     "n8n-community-node-package",
