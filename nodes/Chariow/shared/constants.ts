@@ -3,7 +3,7 @@
  * All app-wide configuration values should be defined here
  */
 
-export const API_BASE_URL = 'https://apichariow.com/v1';
+export const API_BASE_URL = 'https://api.chariow.com/v1';
 
 /**
  * API Endpoints
