@@ -11,6 +11,9 @@
     "automation",
     "workflow"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "homepage": "https://chariow.com",
   "author": {
