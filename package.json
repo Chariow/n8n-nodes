@@ -1,6 +1,6 @@
 {
   "name": "@chariow/n8n-nodes-chariow",
-  "version": "0.0.5",
+  "version": "0.0.0",
   "description": "n8n community nodes for Chariow - the digital products platform for creators and entrepreneurs",
   "keywords": [
     "n8n-community-node-package",
@@ -55,13 +55,13 @@
     ]
   },
   "devDependencies": {
-    "@n8n/node-cli": "*",
+    "@n8n/node-cli": "^0.19.0",
     "eslint": "9.32.0",
-    "n8n-workflow": "*",
+    "n8n-workflow": "^2.8.0",
     "prettier": "3.6.2",
     "typescript": "5.9.2"
   },
   "peerDependencies": {
-    "n8n-workflow": "*"
+    "n8n-workflow": "^2.8.0"
   }
 }
