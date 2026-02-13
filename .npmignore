@@ -61,6 +61,10 @@ __tests__/
 *.temp
 .cache/
 
+# Build artifacts that should not be published
+*.js.map
+*.tsbuildinfo
+
 # Documentation (README and LICENSE are kept)
 CHANGELOG.md
 docs/
