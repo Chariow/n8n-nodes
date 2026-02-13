@@ -37,8 +37,7 @@
     "format:check": "prettier nodes credentials --check",
     "typecheck": "tsc --noEmit",
     "test:local": "pnpm build && n8n-node dev",
-    "release": "n8n-node release",
-    "prepublishOnly": "n8n-node prerelease"
+    "release": "n8n-node release"
   },
   "files": [
     "dist"
