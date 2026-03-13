@@ -16,7 +16,7 @@ importers:
         version: 9.32.0(jiti@2.6.1)
       n8n-workflow:
         specifier: ^2.8.0
-        version: 2.8.0
+        version: 2.12.0
       prettier:
         specifier: 3.8.1
         version: 3.8.1
@@ -243,6 +243,9 @@ packages:
     resolution: {integrity: sha512-Mc4d1jTvvXXtddxqZwGCnG747osrFfDls9AHeDFywQJGMBAIT5D6NQP/7A5X/qWNZHAkATP6xsMWhl5o6pTX8w==}
     peerDependencies:
       eslint: '>= 9'
+
+  '@n8n/expression-runtime@0.4.0':
+    resolution: {integrity: sha512-KYXTedMMqrLEzkcVhv8jCHyg/34RgI0wwDNL3Sc0QhXkNRZnBrjRjbs2d9ZrJKj1OTzj46Ozp0iEfmJYnOW1Ow==}
 
   '@n8n/node-cli@0.19.0':
     resolution: {integrity: sha512-TeMkGPSvxgY1kpEyalZ0QTdVh0K8bm6UF5+sENyY1gcv6xUdoQTbIfrJz5U6y05k0w018U11Pln2RjICG2fXoA==}
@@ -620,6 +623,7 @@ packages:
   basic-ftp@5.1.0:
     resolution: {integrity: sha512-RkaJzeJKDbaDWTIPiJwubyljaEPwpVWkm9Rt5h9Nd6h7tEXTJ3VB4qxdZBioV7JO5yLUaOKwz7vDOzlncUsegw==}
     engines: {node: '>=10.0.0'}
+    deprecated: Security vulnerability fixed in 5.2.0, please upgrade
 
   before-after-hook@4.0.0:
     resolution: {integrity: sha512-q6tR3RPqIB1pMiTRMFcZwuG5T8vwp+vUvEG0vuI6B+Rikh5BfPp2fQ82c925FOs+b0lcFQ8CFrL+KbilfZFhOQ==}
@@ -1274,6 +1278,10 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
+  isolated-vm@6.1.2:
+    resolution: {integrity: sha512-GGfsHqtlZiiurZaxB/3kY7LLAXR3sgzDul0fom4cSyBjx6ZbjpTrFWiH3z/nUfLJGJ8PIq9LQmQFiAxu24+I7A==}
+    engines: {node: '>=22.0.0'}
+
   issue-parser@7.0.1:
     resolution: {integrity: sha512-3YZcUUR2Wt1WsapF+S/WiA2WmlW0cWAoPccMqne7AxEBhCdFeTPjfv/Axb8V2gyCgY3nRw+ksZ3xSUX+R47iAg==}
     engines: {node: ^18.17 || >=20.6.1}
@@ -1311,8 +1319,8 @@ packages:
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
-  jsonrepair@3.13.1:
-    resolution: {integrity: sha512-WJeiE0jGfxYmtLwBTEk8+y/mYcaleyLXWaqp5bJu0/ZTSeG0KQq/wWQ8pmnkKenEdN6pdnn6QtcoSUkbqDHWNw==}
+  jsonrepair@3.13.2:
+    resolution: {integrity: sha512-Leuly0nbM4R+S5SVJk3VHfw1oxnlEK9KygdZvfUtEtTawNDyzB4qa1xWTmFt1aeoA7sXZkVTRuIixJ8bAvqVUg==}
     hasBin: true
 
   jssha@3.3.1:
@@ -1456,8 +1464,8 @@ packages:
     resolution: {integrity: sha512-WWdIxpyjEn+FhQJQQv9aQAYlHoNVdzIzUySNV1gHUPDSdZJ3yZn7pAAbQcV7B56Mvu881q9FZV+0Vx2xC44VWA==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
-  n8n-workflow@2.8.0:
-    resolution: {integrity: sha512-3N+z9bQDf2wb/6ISMdwS5/x2/QMioTUMo54Bq922zpDBjtAsvhidLYbEHNwC1EgEYM1dQeChy1c9xm5yevLrsw==}
+  n8n-workflow@2.12.0:
+    resolution: {integrity: sha512-vcr7XXrrzL4d6+ea1MHkgXHni25/M496ODSBzBxIn46UAbXcEcjHHgmOgmN5rdHtnjKfiy5xD/Bw18PqwlvP0A==}
 
   napi-postinstall@0.3.4:
     resolution: {integrity: sha512-PHI5f1O0EP5xJ9gQmFGMS6IZcrVvTjpXjz7Na41gTE7eE2hK11lg04CECCYEEjdc17EV4DO+fkGEtt7TpTaTiQ==}
@@ -1483,6 +1491,10 @@ packages:
 
   node-fetch-native@1.6.7:
     resolution: {integrity: sha512-g9yhqoedzIUm0nTnTqAQvueMPVOuIY16bqgAJJC8XOOubYFNwz6IER9qs0Gq2Xd0+CecCKFjtdDTMA4u4xG06Q==}
+
+  node-gyp-build@4.8.4:
+    resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
+    hasBin: true
 
   npm-run-path@5.3.0:
     resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
@@ -1719,8 +1731,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  sax@1.4.4:
-    resolution: {integrity: sha512-1n3r/tGXO6b6VXMdFT54SHzT9ytu9yr7TaELowdYpMqY/Ao7EnlQGmAQ1+RatX7Tkkdm6hONI2owqNx2aZj5Sw==}
+  sax@1.5.0:
+    resolution: {integrity: sha512-21IYA3Q5cQf089Z6tgaUTr7lDAyzoTPx5HRtbhsME8Udispad8dC/+sziTNugOEx54ilvatQ9YCzl4KQLPcRHA==}
     engines: {node: '>=11.0.0'}
 
   semver@7.7.3:
@@ -2174,6 +2186,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  '@n8n/expression-runtime@0.4.0':
+    dependencies:
+      '@n8n/tournament': 1.0.6
+      isolated-vm: 6.1.2
+      js-base64: 3.7.2
+      jssha: 3.3.1
+      lodash: 4.17.23
+      luxon: 3.7.2
+      md5: 2.3.0
+      title-case: 3.0.3
+      transliteration: 2.3.5
 
   '@n8n/node-cli@0.19.0(@typescript-eslint/utils@8.55.0(eslint@9.32.0(jiti@2.6.1))(typescript@5.9.3))(eslint@9.32.0(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
@@ -3287,6 +3311,10 @@ snapshots:
 
   isexe@2.0.0: {}
 
+  isolated-vm@6.1.2:
+    dependencies:
+      node-gyp-build: 4.8.4
+
   issue-parser@7.0.1:
     dependencies:
       lodash.capitalize: 4.2.1
@@ -3321,7 +3349,7 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
-  jsonrepair@3.13.1: {}
+  jsonrepair@3.13.2: {}
 
   jssha@3.3.1: {}
 
@@ -3434,9 +3462,10 @@ snapshots:
 
   mute-stream@2.0.0: {}
 
-  n8n-workflow@2.8.0:
+  n8n-workflow@2.12.0:
     dependencies:
       '@n8n/errors': 0.6.0
+      '@n8n/expression-runtime': 0.4.0
       '@n8n/tournament': 1.0.6
       ast-types: 0.16.1
       callsites: 3.1.0
@@ -3444,7 +3473,7 @@ snapshots:
       form-data: 4.0.4
       jmespath: 0.16.0
       js-base64: 3.7.2
-      jsonrepair: 3.13.1
+      jsonrepair: 3.13.2
       jssha: 3.3.1
       lodash: 4.17.23
       luxon: 3.7.2
@@ -3473,6 +3502,8 @@ snapshots:
       tslib: 2.8.1
 
   node-fetch-native@1.6.7: {}
+
+  node-gyp-build@4.8.4: {}
 
   npm-run-path@5.3.0:
     dependencies:
@@ -3743,7 +3774,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sax@1.4.4: {}
+  sax@1.5.0: {}
 
   semver@7.7.3: {}
 
@@ -3978,7 +4009,7 @@ snapshots:
 
   xml2js@0.6.2:
     dependencies:
-      sax: 1.4.4
+      sax: 1.5.0
       xmlbuilder: 11.0.1
 
   xmlbuilder@11.0.1: {}
