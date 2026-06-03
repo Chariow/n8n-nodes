@@ -1,21 +1,19 @@
-MIT License
+Copyright (c) 2024-present Axa Zara LLC. All rights reserved.
 
-Copyright (c) 2025 Axa Zara
+This software and associated documentation files (the "Software") are the
+proprietary property of Axa Zara LLC. The Software is protected by copyright
+laws and international treaty provisions.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+UNAUTHORISED COPYING, MODIFICATION, DISTRIBUTION, OR USE OF THIS SOFTWARE,
+IN WHOLE OR IN PART, IS STRICTLY PROHIBITED WITHOUT THE PRIOR WRITTEN
+PERMISSION OF AXA ZARA LLC.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+No licence, express or implied, by estoppel or otherwise, to any intellectual
+property rights is granted by this document or by any conduct of the parties.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
+AXA ZARA LLC BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
