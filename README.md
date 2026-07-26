@@ -123,7 +123,8 @@ To use this node, you'll need a Chariow API key:
 3. Select **Create** as the operation
 4. Enter the Product ID
 5. Optionally add customer email, discount code, or custom fields
-6. Execute to get a checkout URL
+6. Under **Additional Fields**, set **Customer IP Address** to the buyer's IP when your trigger provides it, otherwise the sale records your n8n instance IP
+7. Execute to get a checkout URL
 
 ## Development
 
