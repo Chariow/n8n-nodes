@@ -181,6 +181,15 @@ export const description: INodeProperties[] = [
 				],
 			},
 			{
+				displayName: 'Customer IP Address',
+				name: 'customerIp',
+				type: 'string',
+				default: '',
+				placeholder: '203.0.113.42',
+				description:
+					"The buyer's IP address (IPv4 or IPv6). Workflows run on your n8n instance, so without this the sale records the instance IP instead of the buyer's. Map it from the trigger that captured the buyer, such as a webhook or form submission.",
+			},
+			{
 				displayName: 'Discount Code',
 				name: 'discountCode',
 				type: 'string',
@@ -315,6 +324,9 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<IData
 	}
 	if (additionalFields.paymentAmount) {
 		body.payment_amount = additionalFields.paymentAmount;
+	}
+	if (additionalFields.customerIp) {
+		body.customer_ip = (additionalFields.customerIp as string).trim();
 	}
 
 	// Handle custom fields
