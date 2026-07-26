@@ -35,32 +35,17 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v6
 
+      # Node 24 ships npm >= 11.5.1, which is required for npm trusted
+      # publishing over OIDC. Node 22 still ships npm 10.x and cannot authenticate.
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Build package
-        run: pnpm build
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Format check
-        run: pnpm format:check
-
-      - name: Typecheck
-        run: pnpm typecheck
-
-      - name: Configure git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Determine version bump
         id: version
@@ -78,6 +63,9 @@ jobs:
             fi
           fi
 
+      # Bump before building so any package.json copied into dist/ carries the
+      # version that is actually published. Nothing is committed until the
+      # publish succeeds.
       - name: Bump version
         id: bump
         run: |
@@ -90,20 +78,38 @@ jobs:
           echo "New version: $NEW"
           echo "version=$NEW" >> $GITHUB_OUTPUT
 
+      - name: Build package
+        run: pnpm build
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Format check
+        run: pnpm format:check
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      # Authenticated via OIDC trusted publishing, configured on npmjs.com for
+      # this repository and workflow filename. No NPM_TOKEN secret is involved.
+      # Provenance is attested automatically and needs no explicit flag, and
+      # public access already comes from publishConfig in package.json.
+      - name: Publish to npm
+        run: npm publish
+
       - name: Commit version bump
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add package.json
           git commit -m "chore(release): v${{ steps.bump.outputs.version }} [skip ci]"
-          git tag "v${{ steps.bump.outputs.version }}"
-          git push origin release --follow-tags
-
-      - name: Publish to npm
-        run: npm publish --provenance --access public
+          git tag -a "v${{ steps.bump.outputs.version }}" -m "v${{ steps.bump.outputs.version }}"
+          git push origin "HEAD:${{ github.ref_name }}" --follow-tags
 
       - name: Setup Node.js for GitHub Packages
         uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           registry-url: 'https://npm.pkg.github.com'
 
       - name: Publish to GitHub Packages
