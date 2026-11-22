@@ -78,6 +78,9 @@ Automatically start workflows when events occur in Chariow:
 - `failed.sale` - When a sale fails
 - `refunded.sale` - When a sale is refunded
 
+#### Customer Events
+- `customer.converted` - When a prospect makes their first paid purchase (the payload carries the converting sale). Not part of "all events": subscribe to it explicitly
+
 #### Licence Events
 - `activated.licence` - When a licence is activated
 - `expired.licence` - When a licence expires

@@ -50,6 +50,10 @@ export class ChariowTrigger implements INodeType {
 						value: 'affiliate',
 					},
 					{
+						name: 'Customer',
+						value: 'customer',
+					},
+					{
 						name: 'License',
 						value: 'license',
 					},
@@ -80,6 +84,27 @@ export class ChariowTrigger implements INodeType {
 				default: ['affiliate_joined'],
 				required: true,
 				description: 'The affiliate events to trigger on',
+			},
+			{
+				displayName: 'Events',
+				name: 'events',
+				type: 'multiOptions',
+				displayOptions: {
+					show: {
+						eventCategory: ['customer'],
+					},
+				},
+				options: [
+					{
+						name: 'Converted',
+						value: 'customer_converted',
+						description:
+							'Triggered when a prospect makes their first paid purchase. Carries the converting sale.',
+					},
+				],
+				default: ['customer_converted'],
+				required: true,
+				description: 'The customer events to trigger on',
 			},
 			{
 				displayName: 'Events',
